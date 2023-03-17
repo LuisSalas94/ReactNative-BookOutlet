@@ -16,29 +16,41 @@ const LoginScreen = () => {
     <View style={styles.container}>
       <Text style={styles.text}>Login to Continue</Text>
       <Image style={styles.logo} source={require('../../assets/sign_up.png')} />
-      <FormInput
-        labelValue={email}
-        onChangeText={userEmail => setEmail(userEmail)}
-        placeholderText="Email"
-        iconType="person-outline"
-        keyboardType="email-address"
-        autoCapitalize="none"
-        autoCorrect={false}
-      />
-      <FormInput
-        labelValue={password}
-        onChangeText={userPassword => setPassword(userPassword)}
-        placeholderText="Password"
-        iconType="lock-closed-outline"
-        secureTextEntry={true}
-      />
-      <FormButton
-        buttonTitle="Sign In"
-        onPress={() => alert('Sign In Clicked!')}
-      />
-      <TouchableOpacity style={styles.forgotButton}>
+
+      <View style={styles.container2}>
+        <FormInput
+          labelValue={email}
+          onChangeText={userEmail => setEmail(userEmail)}
+          placeholderText="Email"
+          iconType="person-outline"
+          keyboardType="email-address"
+          autoCapitalize="none"
+          autoCorrect={false}
+        />
+        <FormInput
+          labelValue={password}
+          onChangeText={userPassword => setPassword(userPassword)}
+          placeholderText="Password"
+          iconType="lock-closed-outline"
+          secureTextEntry={true}
+        />
+        <FormButton
+          buttonTitle="Sign In"
+          onPress={() => alert('Sign In Clicked!')}
+        />
+        <TouchableOpacity
+          style={styles.forgotButton}
+          onPress={() => navigation.navigate('SignUpScreen')}>
+          <Text style={styles.navButtonText}>
+            Don't have an account yet? {'\n'}{' '}
+            <Text style={styles.navButtonText2}>Create an account</Text>
+          </Text>
+        </TouchableOpacity>
+      </View>
+
+      {/*   <TouchableOpacity style={styles.forgotButton}>
         <Text style={styles.navButtonText}>Forgot Password?</Text>
-      </TouchableOpacity>
+      </TouchableOpacity> */}
 
       <SocialButton
         buttonTitle="Sign In with Facebook"
@@ -55,15 +67,6 @@ const LoginScreen = () => {
         backgroundColor="#fff"
         iconColor="#de4d41"
       />
-
-      <TouchableOpacity
-        style={styles.forgotButton}
-        onPress={() => navigation.navigate('SignUpScreen')}>
-        <Text style={styles.navButtonText}>
-          Don't have an account yet? {'\n'}{' '}
-          <Text style={styles.navButtonText2}>Create an account</Text>
-        </Text>
-      </TouchableOpacity>
     </View>
   );
 };
@@ -76,6 +79,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: 20,
     paddingTop: 50,
+  },
+  container2: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#fff',
+    padding: 20,
+    borderRadius: 10,
+    width: '100%',
   },
   logo: {
     height: 320,
@@ -91,7 +102,7 @@ const styles = StyleSheet.create({
     marginTop: 15,
   },
   forgotButton: {
-    marginVertical: 35,
+    marginVertical: 25,
   },
   navButtonText: {
     fontSize: 16,
@@ -100,7 +111,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   navButtonText2: {
-    color: '#4867aa',
+    color: '#d1618a',
     fontStyle: 'italic',
     textDecorationLine: 'underline',
   },

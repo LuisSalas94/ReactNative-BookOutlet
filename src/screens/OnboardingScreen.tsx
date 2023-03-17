@@ -16,7 +16,7 @@ const OnboardingScreen = () => {
       onDone={() => navigation.navigate('LoginScreen')}
       pages={[
         {
-          backgroundColor: '#f1f2f6',
+          backgroundColor: '#fff',
           image: (
             <Image
               style={styles.imageStyle}
@@ -27,7 +27,7 @@ const OnboardingScreen = () => {
           subtitle: 'Done with React Native Onboarding Swiper',
         },
         {
-          backgroundColor: '#F5EAEA',
+          backgroundColor: '#9aa8a9',
           image: (
             <Image
               style={styles.imageStyle}
@@ -38,7 +38,7 @@ const OnboardingScreen = () => {
           subtitle: 'Done with React Native Onboarding Swiper',
         },
         {
-          backgroundColor: '#f1f2f6',
+          backgroundColor: '#fff',
           image: (
             <Image
               style={styles.imageStyle}
@@ -49,7 +49,7 @@ const OnboardingScreen = () => {
           subtitle: 'Done with React Native Onboarding Swiper',
         },
         {
-          backgroundColor: '#F5EAEA',
+          backgroundColor: '#9aa8a9',
           image: (
             <Image
               style={styles.imageStyle}

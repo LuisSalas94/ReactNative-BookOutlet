@@ -5,11 +5,39 @@ import FormButton from '../components/LoginSignup/FormButton';
 import Icon from 'react-native-vector-icons/Ionicons';
 import FormInput from '../components/LoginSignup/FormInput';
 import {windowHeight} from '../utils/Dimensions';
+import {authentication} from '../../firebase/firebase-config.js';
+import {signInWithEmailAndPassword, signOut} from 'firebase/auth';
+
+//https://www.youtube.com/watch?v=20TSEoJkg5k&ab_channel=BornToCode
+//https://console.firebase.google.com/project/proyectofirebase-9d69f/authentication/users
 
 const SignUpScreen = () => {
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [isSignedIn, setIsSignedIn] = useState(false);
   const navigation = useNavigation();
+
+  const signInUser = () => {
+    signInWithEmailAndPassword(authentication, email, password)
+      .then(re => {
+        console.log('Success', re);
+        setIsSignedIn(true);
+      })
+      .catch(re => {
+        console.log('Error: ', re);
+      });
+  };
+
+  const signOutUser = () => {
+    signOut(authentication)
+      .then(re => {
+        console.log('Success', re);
+        setIsSignedIn(false);
+      })
+      .catch(re => {
+        console.log('Error: ', re);
+      });
+  };
 
   return (
     <View style={styles.container}>
@@ -22,7 +50,7 @@ const SignUpScreen = () => {
         />
       </View>
       <View style={styles.container2}>
-        <Text style={styles.text}>Create an account</Text>
+        <Text style={styles.text}>Sig In</Text>
         <FormInput
           labelValue={email}
           onChangeText={userEmail => setEmail(userEmail)}
@@ -39,10 +67,12 @@ const SignUpScreen = () => {
           iconType="lock-closed-outline"
           secureTextEntry={true}
         />
-        <FormButton
-          buttonTitle="Sign Up"
-          onPress={() => alert('Sign Up Clicked!')}
-        />
+        {isSignedIn ? (
+          <FormButton buttonTitle="Sign Out" onPress={() => signOutUser()} />
+        ) : (
+          <FormButton buttonTitle="Sign In" onPress={() => signInUser()} />
+        )}
+        {/*     <FormButton buttonTitle="Sign In" onPress={() => signInUser()} /> */}
 
         <View style={styles.textPrivate}>
           <Text style={styles.color_textPrivate}>

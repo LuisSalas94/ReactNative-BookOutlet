@@ -3,18 +3,31 @@ import React, {useState} from 'react';
 import {Image} from 'react-native';
 import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import FormButton from '../components/LoginSignup/FormButton';
-
 import FormInput from '../components/LoginSignup/FormInput';
 import SocialButton from '../components/LoginSignup/SocialButton';
+import {authentication} from '../../firebase/firebase-config.js';
+import {createUserWithEmailAndPassword} from 'firebase/auth';
 
 const LoginScreen = () => {
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [isSigned, setIsSigned] = useState(false);
   const navigation = useNavigation();
+
+  const registerUser = () => {
+    createUserWithEmailAndPassword(authentication, email, password)
+      .then(re => {
+        console.log('Success', re);
+        setIsSigned(true);
+      })
+      .catch(re => {
+        console.log('Error: ', re);
+      });
+  };
 
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Login to Continue</Text>
+      <Text style={styles.text}>Register to Continue</Text>
       <Image style={styles.logo} source={require('../../assets/sign_up.png')} />
 
       <View style={styles.container2}>
@@ -34,10 +47,7 @@ const LoginScreen = () => {
           iconType="lock-closed-outline"
           secureTextEntry={true}
         />
-        <FormButton
-          buttonTitle="Sign In"
-          onPress={() => alert('Sign In Clicked!')}
-        />
+        <FormButton buttonTitle="Register" onPress={() => registerUser()} />
         <TouchableOpacity
           style={styles.forgotButton}
           onPress={() => navigation.navigate('SignUpScreen')}>

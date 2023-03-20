@@ -72,7 +72,6 @@ const SignUpScreen = () => {
         ) : (
           <FormButton buttonTitle="Sign In" onPress={() => signInUser()} />
         )}
-        {/*     <FormButton buttonTitle="Sign In" onPress={() => signInUser()} /> */}
 
         <View style={styles.textPrivate}>
           <Text style={styles.color_textPrivate}>
@@ -93,8 +92,8 @@ const SignUpScreen = () => {
           style={styles.navButton}
           onPress={() => navigation.navigate('LoginScreen')}>
           <Text style={styles.navButtonText}>
-            Have an account? {'\n'}{' '}
-            <Text style={styles.navButtonText2}>Sign In</Text>
+            Don't have an account yet? {'\n'}{' '}
+            <Text style={styles.navButtonText2}>Create an account</Text>
           </Text>
         </TouchableOpacity>
       </View>
@@ -130,8 +129,8 @@ const styles = StyleSheet.create({
   },
 
   navButtonText: {
-    fontSize: 16,
-    fontWeight: '400',
+    fontSize: 14,
+    fontWeight: '300',
     color: '#3f494a',
     textAlign: 'center',
   },
@@ -139,6 +138,7 @@ const styles = StyleSheet.create({
     color: '#d1618a',
     fontStyle: 'italic',
     textDecorationLine: 'underline',
+    fontWeight: '300',
   },
   textPrivate: {
     flexDirection: 'row',

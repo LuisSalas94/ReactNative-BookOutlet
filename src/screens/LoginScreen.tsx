@@ -48,19 +48,30 @@ const LoginScreen = () => {
           secureTextEntry={true}
         />
         <FormButton buttonTitle="Register" onPress={() => registerUser()} />
+
+        <View style={styles.textPrivate}>
+          <Text style={styles.color_textPrivate}>
+            By registering, you confirm that you accept our{' '}
+          </Text>
+          <TouchableOpacity onPress={() => alert('Terms Clicked!')}>
+            <Text style={[styles.color_textPrivate, {color: '#d1618a'}]}>
+              Terms of service
+            </Text>
+          </TouchableOpacity>
+          <Text style={styles.color_textPrivate}> and </Text>
+          <Text style={[styles.color_textPrivate, {color: '#d1618a'}]}>
+            Privacy Policy
+          </Text>
+        </View>
         <TouchableOpacity
-          style={styles.forgotButton}
+          style={styles.navButton}
           onPress={() => navigation.navigate('SignUpScreen')}>
           <Text style={styles.navButtonText}>
-            Don't have an account yet? {'\n'}{' '}
-            <Text style={styles.navButtonText2}>Create an account</Text>
+            Have an account? {'\n'}{' '}
+            <Text style={styles.navButtonText2}>Sign In</Text>
           </Text>
         </TouchableOpacity>
       </View>
-
-      {/*   <TouchableOpacity style={styles.forgotButton}>
-        <Text style={styles.navButtonText}>Forgot Password?</Text>
-      </TouchableOpacity> */}
 
       <SocialButton
         buttonTitle="Sign In with Facebook"
@@ -88,7 +99,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 20,
-    paddingTop: 50,
+    paddingTop: 20,
   },
   container2: {
     justifyContent: 'center',
@@ -115,8 +126,8 @@ const styles = StyleSheet.create({
     marginVertical: 25,
   },
   navButtonText: {
-    fontSize: 16,
-    fontWeight: '400',
+    fontSize: 14,
+    fontWeight: '300',
     color: '#3f494a',
     textAlign: 'center',
   },
@@ -124,5 +135,16 @@ const styles = StyleSheet.create({
     color: '#d1618a',
     fontStyle: 'italic',
     textDecorationLine: 'underline',
+  },
+  textPrivate: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    marginVertical: 35,
+    justifyContent: 'center',
+  },
+  color_textPrivate: {
+    fontSize: 13,
+    fontWeight: '400',
+    color: 'grey',
   },
 });

@@ -1,29 +1,13 @@
-import {useNavigation} from '@react-navigation/native';
-import React, {useState} from 'react';
-import {Image} from 'react-native';
-import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
+import React from 'react';
+import {StyleSheet, Text, View, TouchableOpacity, Image} from 'react-native';
 import FormButton from '../components/LoginSignup/FormButton';
 import FormInput from '../components/LoginSignup/FormInput';
 import SocialButton from '../components/LoginSignup/SocialButton';
-import {authentication} from '../../firebase/firebase-config.js';
-import {createUserWithEmailAndPassword} from 'firebase/auth';
+import {useLogin} from '../hooks/useLogin';
 
 const LoginScreen = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [isSigned, setIsSigned] = useState(false);
-  const navigation = useNavigation();
-
-  const registerUser = () => {
-    createUserWithEmailAndPassword(authentication, email, password)
-      .then(re => {
-        console.log('Success', re);
-        setIsSigned(true);
-      })
-      .catch(re => {
-        console.log('Error: ', re);
-      });
-  };
+  const {email, setEmail, password, setPassword, navigation, registerUser} =
+    useLogin();
 
   return (
     <View style={styles.container}>

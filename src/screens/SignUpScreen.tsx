@@ -7,6 +7,9 @@ import FormInput from '../components/LoginSignup/FormInput';
 import {windowHeight} from '../utils/Dimensions';
 import {authentication} from '../../firebase/firebase-config.js';
 import {signInWithEmailAndPassword, signOut} from 'firebase/auth';
+import BottomTabNavigator from '../navigation/BottomTabNavigator';
+import {addUser} from '../features/user/userSlice';
+import {useAppDispatch} from '../hooks/storeHooks';
 
 //https://www.youtube.com/watch?v=20TSEoJkg5k&ab_channel=BornToCode
 //https://console.firebase.google.com/project/proyectofirebase-9d69f/authentication/users
@@ -16,12 +19,20 @@ const SignUpScreen = () => {
   const [password, setPassword] = useState('');
   const [isSignedIn, setIsSignedIn] = useState(false);
   const navigation = useNavigation();
+  const dispatch = useAppDispatch();
+
+  const user =
+    email.charAt(0).toUpperCase() +
+    email.substring(0, email.indexOf('@')).slice(1);
 
   const signInUser = () => {
     signInWithEmailAndPassword(authentication, email, password)
       .then(re => {
         console.log('Success', re);
         setIsSignedIn(true);
+        navigation.navigate('BottomTabNavigator');
+        dispatch(addUser(user));
+        console.log('user: ', user);
       })
       .catch(re => {
         console.log('Error: ', re);
@@ -67,11 +78,12 @@ const SignUpScreen = () => {
           iconType="lock-closed-outline"
           secureTextEntry={true}
         />
-        {isSignedIn ? (
+        <FormButton buttonTitle="Sign In" onPress={() => signInUser()} />
+        {/*   {isSignedIn ? (
           <FormButton buttonTitle="Sign Out" onPress={() => signOutUser()} />
         ) : (
           <FormButton buttonTitle="Sign In" onPress={() => signInUser()} />
-        )}
+        )} */}
 
         <View style={styles.textPrivate}>
           <Text style={styles.color_textPrivate}>

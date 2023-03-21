@@ -3,6 +3,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import OnboardingScreen from '../screens/OnboardingScreen';
 import LoginScreen from '../screens/LoginScreen';
 import SignUpScreen from '../screens/SignUpScreen';
+import BottomTabNavigator from './BottomTabNavigator';
 
 const Stack = createStackNavigator();
 
@@ -15,6 +16,7 @@ export const Navigator = () => {
       <Stack.Screen name="OnboardingScreen" component={OnboardingScreen} />
       <Stack.Screen name="LoginScreen" component={LoginScreen} />
       <Stack.Screen name="SignUpScreen" component={SignUpScreen} />
+      <Stack.Screen name="BottomTabNavigator" component={BottomTabNavigator} />
     </Stack.Navigator>
   );
 };

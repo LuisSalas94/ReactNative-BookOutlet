@@ -1,54 +1,21 @@
-import {useNavigation} from '@react-navigation/native';
-import React, {useState} from 'react';
+import React from 'react';
 import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import FormButton from '../components/LoginSignup/FormButton';
 import Icon from 'react-native-vector-icons/Ionicons';
 import FormInput from '../components/LoginSignup/FormInput';
 import {windowHeight} from '../utils/Dimensions';
-import {authentication} from '../../firebase/firebase-config.js';
-import {signInWithEmailAndPassword, signOut} from 'firebase/auth';
-import BottomTabNavigator from '../navigation/BottomTabNavigator';
-import {addUser} from '../features/user/userSlice';
-import {useAppDispatch} from '../hooks/storeHooks';
+import {useSignup} from '../hooks/useSignup';
 
 //https://www.youtube.com/watch?v=20TSEoJkg5k&ab_channel=BornToCode
 //https://console.firebase.google.com/project/proyectofirebase-9d69f/authentication/users
 
 const SignUpScreen = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [isSignedIn, setIsSignedIn] = useState(false);
-  const navigation = useNavigation();
-  const dispatch = useAppDispatch();
+  const {email, setEmail, password, setPassword, navigation, signInUser} =
+    useSignup();
 
   const user =
     email.charAt(0).toUpperCase() +
     email.substring(0, email.indexOf('@')).slice(1);
-
-  const signInUser = () => {
-    signInWithEmailAndPassword(authentication, email, password)
-      .then(re => {
-        console.log('Success', re);
-        setIsSignedIn(true);
-        navigation.navigate('BottomTabNavigator');
-        dispatch(addUser(user));
-        console.log('user: ', user);
-      })
-      .catch(re => {
-        console.log('Error: ', re);
-      });
-  };
-
-  const signOutUser = () => {
-    signOut(authentication)
-      .then(re => {
-        console.log('Success', re);
-        setIsSignedIn(false);
-      })
-      .catch(re => {
-        console.log('Error: ', re);
-      });
-  };
 
   return (
     <View style={styles.container}>
@@ -78,7 +45,7 @@ const SignUpScreen = () => {
           iconType="lock-closed-outline"
           secureTextEntry={true}
         />
-        <FormButton buttonTitle="Sign In" onPress={() => signInUser()} />
+        <FormButton buttonTitle="Sign In" onPress={() => signInUser(user)} />
         {/*   {isSignedIn ? (
           <FormButton buttonTitle="Sign Out" onPress={() => signOutUser()} />
         ) : (
@@ -89,7 +56,7 @@ const SignUpScreen = () => {
           <Text style={styles.color_textPrivate}>
             By registering, you confirm that you accept our{' '}
           </Text>
-          <TouchableOpacity onPress={() => alert('Terms Clicked!')}>
+          <TouchableOpacity>
             <Text style={[styles.color_textPrivate, {color: '#d1618a'}]}>
               Terms of service
             </Text>

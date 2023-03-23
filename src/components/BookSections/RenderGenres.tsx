@@ -1,15 +1,20 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {FlatList, StyleSheet, View} from 'react-native';
 import React from 'react';
+import RenderItem from './RenderItem';
 
 interface Props {
   genres: string[];
 }
 
 const RenderGenres = ({genres}: Props) => {
-  console.log('from RenderGenres: ', genres);
   return (
     <View>
-      <Text>RenderGenres</Text>
+      <FlatList
+        data={['All', ...genres]}
+        renderItem={({item}) => <RenderItem item={item} />}
+        keyExtractor={item => item}
+        horizontal={true}
+      />
     </View>
   );
 };

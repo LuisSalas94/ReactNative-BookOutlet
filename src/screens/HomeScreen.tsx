@@ -1,14 +1,35 @@
-import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
+import {ScrollView, StyleSheet, View} from 'react-native';
+import ScreenGreeting from '../components/ScreenGreeting/ScreenGreeting';
+import ShoppingCart from '../components/ScreenGreeting/ShoppingCart';
+import Title from '../components/ScreenGreeting/Title';
 
 const HomeScreen = () => {
   return (
-    <View>
-      <Text>HomeScreen</Text>
-    </View>
+    <ScrollView style={styles.homeContainer}>
+      <View style={styles.container}>
+        <Title />
+        <ShoppingCart />
+      </View>
+      <ScreenGreeting />
+    </ScrollView>
   );
 };
 
 export default HomeScreen;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: 7,
+  },
+  homeContainer: {
+    padding: 25,
+  },
+});
+
+/*
+#d1618a
+#3f494a
+*/

@@ -5,6 +5,7 @@ import {useEffect} from 'react';
 export const useBookSections = () => {
   const dispatch = useAppDispatch();
   const books = useAppSelector(state => state.books.books);
+  const isLoading = useAppSelector(state => state.books.isLoading);
   const genres = Array(...new Set(books.map(book => book.genre)));
 
   useEffect(() => {
@@ -15,5 +16,6 @@ export const useBookSections = () => {
     books,
     genres,
     dispatch,
+    isLoading,
   };
 };

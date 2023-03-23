@@ -1,6 +1,7 @@
 import React from 'react';
 import {StyleSheet, Text, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
+import {useRenderItem} from '../../hooks/useRenderItem';
 
 interface Props {
   item: string;
@@ -11,22 +12,7 @@ const RenderItem = ({item}: Props) => {
     console.log(item);
   };
 
-  let iconName = '';
-  if (item === 'All') {
-    iconName = 'book-outline';
-  } else if (item === 'Science') {
-    iconName = 'bulb-outline';
-  } else if (item === 'History') {
-    iconName = 'man-outline';
-  } else if (item === 'Social Philosophy') {
-    iconName = 'leaf-outline';
-  } else if (item === 'Biology') {
-    iconName = 'flask-outline';
-  } else if (item === 'Cosmology') {
-    iconName = 'rocket-outline';
-  } else if (item === 'Self Help') {
-    iconName = 'happy-outline';
-  }
+  const {iconName} = useRenderItem(item);
 
   return (
     <TouchableOpacity onPress={() => test(item)} style={styles.container}>
@@ -50,5 +36,14 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     gap: 5,
+    shadowColor: '#333',
+    shadowOffset: {
+      width: 0,
+      height: 3,
+    },
+    shadowOpacity: 0.27,
+    shadowRadius: 4.65,
+
+    elevation: 6,
   },
 });

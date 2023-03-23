@@ -31,11 +31,7 @@ const styles = StyleSheet.create({
   homeContainer: {
     padding: 25,
   },
-  booksContainer: {
-    backgroundColor: '#ccc',
-    borderRadius: 10,
-    marginTop: 10,
-  },
+  booksContainer: {},
 });
 
 /*

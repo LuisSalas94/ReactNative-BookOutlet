@@ -13,9 +13,7 @@ const HomeScreen = () => {
         <ShoppingCart />
       </View>
       <ScreenGreeting />
-      <View style={styles.booksContainer}>
-        <BookSections />
-      </View>
+      <BookSections />
     </ScrollView>
   );
 };
@@ -31,7 +29,6 @@ const styles = StyleSheet.create({
   homeContainer: {
     padding: 25,
   },
-  booksContainer: {},
 });
 
 /*

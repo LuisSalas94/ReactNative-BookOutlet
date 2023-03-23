@@ -16,7 +16,6 @@ const RenderBooks = ({books}: Books) => {
         renderItem={({item}) => <RenderBook item={item} />}
         keyExtractor={item => item.isbn}
       />
-      <View style={styles.space} />
     </View>
   );
 };
@@ -27,8 +26,6 @@ const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
     marginTop: 10,
-  },
-  space: {
-    height: 100,
+    marginBottom: 10,
   },
 });

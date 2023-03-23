@@ -4,10 +4,14 @@ import {useEffect} from 'react';
 
 export const useBookSections = () => {
   const dispatch = useAppDispatch();
-  const books = useAppSelector(state => state.books.books);
-  const isLoading = useAppSelector(state => state.books.isLoading);
+
+  const {
+    books,
+    isLoading,
+    filteredBooks: filteredBook,
+  } = useAppSelector(state => state.books);
+
   const genres = Array(...new Set(books.map(book => book.genre)));
-  const filteredBook = useAppSelector(state => state.books.filteredBooks);
 
   useEffect(() => {
     dispatch(fetchAsyncBooks());

@@ -1,5 +1,6 @@
 import React from 'react';
 import {ScrollView, StyleSheet, View} from 'react-native';
+import BookSections from '../components/BookSections/BookSections';
 import ScreenGreeting from '../components/ScreenGreeting/ScreenGreeting';
 import ShoppingCart from '../components/ScreenGreeting/ShoppingCart';
 import Title from '../components/ScreenGreeting/Title';
@@ -12,6 +13,7 @@ const HomeScreen = () => {
         <ShoppingCart />
       </View>
       <ScreenGreeting />
+      <BookSections />
     </ScrollView>
   );
 };

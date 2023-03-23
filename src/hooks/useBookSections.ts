@@ -7,6 +7,7 @@ export const useBookSections = () => {
   const books = useAppSelector(state => state.books.books);
   const isLoading = useAppSelector(state => state.books.isLoading);
   const genres = Array(...new Set(books.map(book => book.genre)));
+  const filteredBook = useAppSelector(state => state.books.filteredBooks);
 
   useEffect(() => {
     dispatch(fetchAsyncBooks());
@@ -17,5 +18,6 @@ export const useBookSections = () => {
     genres,
     dispatch,
     isLoading,
+    filteredBook,
   };
 };

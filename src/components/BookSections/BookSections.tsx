@@ -6,10 +6,7 @@ import Loader from '../ActivityIndicator/Loader';
 import RenderBooks from './RenderBooks';
 
 const BookSections = () => {
-  const {books, genres, isLoading} = useBookSections();
-
-  console.log('Books: ', books);
-  console.log('Is Loading: ', isLoading);
+  const {genres, isLoading, filteredBook} = useBookSections();
 
   if (isLoading) {
     return <Loader />;
@@ -18,7 +15,7 @@ const BookSections = () => {
   return (
     <View style={styles.sectionContainer}>
       <RenderGenres genres={genres} />
-      <RenderBooks books={books} />
+      <RenderBooks books={filteredBook} />
     </View>
   );
 };

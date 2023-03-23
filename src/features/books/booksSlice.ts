@@ -8,12 +8,14 @@ const baseURL =
 //* Book Interface
 export type Books = {
   books: Book[];
+  filteredBooks: Book[];
   isLoading: boolean;
 };
 
 //* Initial State
 const initialState: Books = {
   books: [],
+  filteredBooks: [],
   isLoading: false,
 };
 
@@ -30,7 +32,17 @@ export const fetchAsyncBooks = createAsyncThunk(
 const booksSlice = createSlice({
   name: 'books',
   initialState,
-  reducers: {},
+  reducers: {
+    filterBooksByGenre: (state, action) => {
+      const genre = action.payload;
+
+      if (genre === 'All') {
+        state.filteredBooks = state.books;
+      } else {
+        state.filteredBooks = state.books.filter(book => book.genre === genre);
+      }
+    },
+  },
   extraReducers: builder => {
     builder.addCase(fetchAsyncBooks.pending, state => {
       state.isLoading = true;
@@ -38,6 +50,7 @@ const booksSlice = createSlice({
     builder.addCase(fetchAsyncBooks.fulfilled, (state, action) => {
       state.isLoading = false;
       state.books = action.payload;
+      state.filteredBooks = action.payload;
     });
     builder.addCase(fetchAsyncBooks.rejected, state => {
       state.isLoading = false;
@@ -46,6 +59,7 @@ const booksSlice = createSlice({
 });
 
 //* Export actions
+export const {filterBooksByGenre} = booksSlice.actions;
 
 //* Export reducer
 export default booksSlice.reducer;

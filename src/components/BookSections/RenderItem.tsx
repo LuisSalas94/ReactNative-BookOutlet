@@ -2,20 +2,24 @@ import React from 'react';
 import {StyleSheet, Text, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {useRenderItem} from '../../hooks/useRenderItem';
+import {filterBooksByGenre} from '../../features/books/booksSlice';
+import {useAppDispatch} from '../../hooks/storeHooks';
 
 interface Props {
   item: string;
 }
 
 const RenderItem = ({item}: Props) => {
-  const test = item => {
-    console.log(item);
-  };
+  const dispatch = useAppDispatch();
 
   const {iconName} = useRenderItem(item);
 
+  const filterBook = item => {
+    dispatch(filterBooksByGenre(item));
+  };
+
   return (
-    <TouchableOpacity onPress={() => test(item)} style={styles.container}>
+    <TouchableOpacity onPress={() => filterBook(item)} style={styles.container}>
       <Icon name={iconName} size={15} color="#333" />
       <Text>{item}</Text>
     </TouchableOpacity>

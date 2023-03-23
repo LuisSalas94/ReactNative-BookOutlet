@@ -6,6 +6,8 @@ import {useBookSections} from '../../hooks/useBookSections';
 const BookSections = () => {
   const {books, genres} = useBookSections();
 
+  console.log('Books: ', books);
+
   return (
     <View style={styles.sectionContainer}>
       <RenderGenres genres={genres} />

@@ -1,5 +1,5 @@
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
+import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 
 interface Props {
   item: string;
@@ -11,11 +11,9 @@ const RenderItem = ({item}: Props) => {
   };
 
   return (
-    <View style={styles.container}>
-      <TouchableOpacity onPress={() => test(item)}>
-        <Text>{item}</Text>
-      </TouchableOpacity>
-    </View>
+    <TouchableOpacity onPress={() => test(item)} style={styles.container}>
+      <Text>{item}</Text>
+    </TouchableOpacity>
   );
 };
 
@@ -23,10 +21,12 @@ export default RenderItem;
 
 const styles = StyleSheet.create({
   container: {
-    marginRight: 15,
-    borderWidth: 1,
+    marginRight: 20,
+    marginBottom: 15,
+    borderWidth: 0.5,
     borderColor: '#ccc',
-    padding: 5,
+    padding: 8,
     borderRadius: 5,
+    backgroundColor: '#fff',
   },
 });

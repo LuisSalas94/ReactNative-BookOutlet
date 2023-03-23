@@ -8,12 +8,12 @@ interface Props {
 
 const RenderGenres = ({genres}: Props) => {
   return (
-    <View>
+    <View style={styles.flatListContainer}>
       <FlatList
+        numColumns={4}
         data={['All', ...genres]}
         renderItem={({item}) => <RenderItem item={item} />}
         keyExtractor={item => item}
-        horizontal={true}
       />
     </View>
   );
@@ -21,4 +21,8 @@ const RenderGenres = ({genres}: Props) => {
 
 export default RenderGenres;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  flatListContainer: {
+    alignItems: 'center',
+  },
+});

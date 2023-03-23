@@ -13,7 +13,9 @@ const HomeScreen = () => {
         <ShoppingCart />
       </View>
       <ScreenGreeting />
-      <BookSections />
+      <View style={styles.booksContainer}>
+        <BookSections />
+      </View>
     </ScrollView>
   );
 };
@@ -28,6 +30,11 @@ const styles = StyleSheet.create({
   },
   homeContainer: {
     padding: 25,
+  },
+  booksContainer: {
+    backgroundColor: '#ccc',
+    borderRadius: 10,
+    marginTop: 10,
   },
 });
 

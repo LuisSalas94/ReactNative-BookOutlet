@@ -21,7 +21,7 @@ export default Synopsis;
 const styles = StyleSheet.create({
   synopsisContainer: {
     paddingHorizontal: 20,
-    marginBottom: 100,
+    marginBottom: 20,
   },
   synopsisTitleStyle: {
     fontSize: 20,

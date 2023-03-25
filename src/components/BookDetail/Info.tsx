@@ -6,9 +6,10 @@ import {windowWidth} from '../../utils/Dimensions';
 interface Props {
   genre: string;
   num_pages: number;
+  price: number;
 }
 
-const Info = ({genre, num_pages}: Props) => {
+const Info = ({genre, num_pages, price}: Props) => {
   return (
     <View style={styles.infoContainer}>
       <View style={styles.infoIconContainer}>
@@ -21,6 +22,9 @@ const Info = ({genre, num_pages}: Props) => {
       <View style={styles.pagesStyle}>
         <Text style={styles.pagesTextStyle}>{num_pages}</Text>
         <Text>Pages</Text>
+      </View>
+      <View style={styles.priceStyle}>
+        <Text style={styles.boldStyle}>$/{price - 1.5}</Text>
       </View>
     </View>
   );
@@ -72,6 +76,11 @@ const styles = StyleSheet.create({
   pagesTextStyle: {
     fontWeight: 'bold',
     marginRight: 3,
+  },
+  priceStyle: {
+    backgroundColor: '#BBF7D0',
+    padding: 6,
+    borderRadius: 10,
   },
   boldStyle: {
     fontWeight: 'bold',

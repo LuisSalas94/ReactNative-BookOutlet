@@ -24,6 +24,7 @@ const ExploreScreen = ({route}: Props) => {
     description,
     review,
     review_author,
+    price,
   } = route.params;
 
   return (
@@ -41,7 +42,7 @@ const ExploreScreen = ({route}: Props) => {
       <BookImage image={image} />
 
       {/* Info Container */}
-      <Info genre={genre} num_pages={num_pages} />
+      <Info genre={genre} num_pages={num_pages} price={price} />
 
       {/* Synopsis */}
       <Synopsis synopsis={synopsis} description={description} />

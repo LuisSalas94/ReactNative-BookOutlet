@@ -14,18 +14,8 @@ import Review from '../components/BookDetail/Review';
 interface Props extends StackScreenProps<RootStackParams, 'ExploreScreen'> {}
 
 const ExploreScreen = ({route}: Props) => {
-  const {
-    title,
-    image,
-    author,
-    genre,
-    num_pages,
-    synopsis,
-    description,
-    review,
-    review_author,
-    price,
-  } = route.params;
+  const {title, image, author, genre, num_pages, review, review_author, price} =
+    route.params;
 
   return (
     <ScrollView>
@@ -45,7 +35,7 @@ const ExploreScreen = ({route}: Props) => {
       <Info genre={genre} num_pages={num_pages} price={price} />
 
       {/* Synopsis */}
-      <Synopsis synopsis={synopsis} description={description} />
+      <Synopsis book={route.params} />
 
       {/* Review */}
       <Review review={review} review_author={review_author} />

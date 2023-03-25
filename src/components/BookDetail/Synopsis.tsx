@@ -1,18 +1,25 @@
 import React from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
+import {useAppDispatch} from '../../hooks/storeHooks';
+import {Book} from '../../interfaces/bookInterface';
+import {addToFavorites} from '../../features/favorites/favoritesSlice';
 
 interface Props {
-  synopsis: string;
-  description: string;
+  book: Book;
 }
 
-const Synopsis = ({synopsis, description}: Props) => {
+const Synopsis = ({book}: Props) => {
+  const {synopsis, description} = book;
+  const dispatch = useAppDispatch();
+
   return (
     <View style={styles.synopsisContainer}>
       <View style={styles.synopsisTitleContainer}>
         <Text style={styles.synopsisTitleStyle}>Synopsis</Text>
-        <TouchableOpacity style={styles.synopsisTitleIconContainer}>
+        <TouchableOpacity
+          style={styles.synopsisTitleIconContainer}
+          onPress={() => dispatch(addToFavorites(book))}>
           <Icon name="bookmark-outline" size={22} color="#333" />
         </TouchableOpacity>
       </View>

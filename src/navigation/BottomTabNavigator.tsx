@@ -6,12 +6,14 @@ import CartScreen from '../screens/CartScreen';
 import MyPageScreen from '../screens/MyPageScreen';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {Book} from '../interfaces/bookInterface';
+import Favorites from '../screens/Favorites';
 
 export type RootStackParams = {
   Home: undefined;
   ExploreScreen: Book;
   CartScreen: undefined;
   MyPageScreen: undefined;
+  Favorites: undefined;
 };
 
 const BottomTab = createBottomTabNavigator<RootStackParams>();
@@ -57,6 +59,16 @@ const BottomTabNavigator = () => {
         }}
       />
       <BottomTab.Screen
+        name="Favorites"
+        component={Favorites}
+        options={{
+          tabBarLabel: 'Favorites',
+          tabBarIcon: ({color}) => (
+            <Icon name="bookmark-outline" color={color} size={30} />
+          ),
+        }}
+      />
+      <BottomTab.Screen
         name="CartScreen"
         component={CartScreen}
         options={{
@@ -66,6 +78,7 @@ const BottomTabNavigator = () => {
           ),
         }}
       />
+
       <BottomTab.Screen
         name="MyPageScreen"
         component={MyPageScreen}

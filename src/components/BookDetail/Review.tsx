@@ -20,7 +20,8 @@ export default Review;
 const styles = StyleSheet.create({
   container: {
     paddingHorizontal: 20,
-    marginBottom: 90,
+    marginTop: 10,
+    marginBottom: 45,
     alignItems: 'flex-end',
   },
   reviewStyle: {

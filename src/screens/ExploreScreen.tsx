@@ -9,6 +9,7 @@ import Titles from '../components/BookDetail/Titles';
 import BackIcon from '../components/BookDetail/BackIcon';
 import BackGroundImage from '../components/BookDetail/BackGroundImage';
 import Review from '../components/BookDetail/Review';
+import Buy from '../components/BookDetail/Buy';
 
 //* Use RootStackParamList to pass params to the screen
 interface Props extends StackScreenProps<RootStackParams, 'ExploreScreen'> {}
@@ -39,6 +40,9 @@ const ExploreScreen = ({route}: Props) => {
 
       {/* Review */}
       <Review review={review} review_author={review_author} />
+
+      {/* Buy */}
+      <Buy />
     </ScrollView>
   );
 };

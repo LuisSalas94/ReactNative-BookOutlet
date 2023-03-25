@@ -1,5 +1,6 @@
-import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
+import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 interface Props {
   synopsis: string;
@@ -9,7 +10,12 @@ interface Props {
 const Synopsis = ({synopsis, description}: Props) => {
   return (
     <View style={styles.synopsisContainer}>
-      <Text style={styles.synopsisTitleStyle}>Synopsis</Text>
+      <View style={styles.synopsisTitleContainer}>
+        <Text style={styles.synopsisTitleStyle}>Synopsis</Text>
+        <TouchableOpacity style={styles.synopsisTitleIconContainer}>
+          <Icon name="bookmark-outline" size={22} color="#333" />
+        </TouchableOpacity>
+      </View>
       <Text style={styles.synopsisStyle}>{synopsis}</Text>
       <Text style={styles.synopsisStyle}>{description}</Text>
     </View>
@@ -27,10 +33,24 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
   },
+  synopsisTitleContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  synopsisTitleIconContainer: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: 34,
+    height: 34,
+    borderRadius: 17,
+    borderWidth: 0.8,
+    borderColor: '#333',
+  },
   synopsisStyle: {
     fontSize: 15,
     letterSpacing: 0.5,
     lineHeight: 20,
-    marginTop: 10,
+    marginTop: 20,
   },
 });

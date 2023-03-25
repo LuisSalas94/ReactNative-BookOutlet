@@ -1,6 +1,7 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import {windowWidth} from '../../utils/Dimensions';
+import {useBookTitle} from '../../hooks/useBookTitle';
 
 interface Props {
   title: string;
@@ -8,10 +9,7 @@ interface Props {
 }
 
 const Titles = ({title, author}: Props) => {
-  const substring = ':';
-  const colonIndex = title.indexOf(substring);
-  const newTitle =
-    title.indexOf(substring) !== -1 ? title.slice(0, colonIndex) : title;
+  const {newTitle} = useBookTitle(title);
 
   return (
     <View

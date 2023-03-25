@@ -13,8 +13,17 @@ import BackGroundImage from '../components/BookDetail/BackGroundImage';
 interface Props extends StackScreenProps<RootStackParams, 'ExploreScreen'> {}
 
 const ExploreScreen = ({route}: Props) => {
-  const {title, image, author, genre, num_pages, synopsis, description} =
-    route.params;
+  const {
+    title,
+    image,
+    author,
+    genre,
+    num_pages,
+    synopsis,
+    description,
+    review,
+    review_author,
+  } = route.params;
 
   return (
     <ScrollView>
@@ -35,6 +44,8 @@ const ExploreScreen = ({route}: Props) => {
 
       {/* Synopsis */}
       <Synopsis synopsis={synopsis} description={description} />
+
+      {/* Review */}
     </ScrollView>
   );
 };

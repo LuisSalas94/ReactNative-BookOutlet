@@ -5,8 +5,16 @@ import ExploreScreen from '../screens/ExploreScreen';
 import CartScreen from '../screens/CartScreen';
 import MyPageScreen from '../screens/MyPageScreen';
 import Icon from 'react-native-vector-icons/Ionicons';
+import {Book} from '../interfaces/bookInterface';
 
-const BottomTab = createBottomTabNavigator();
+export type RootStackParams = {
+  Home: undefined;
+  ExploreScreen: Book;
+  CartScreen: undefined;
+  MyPageScreen: undefined;
+};
+
+const BottomTab = createBottomTabNavigator<RootStackParams>();
 
 const BottomTabNavigator = () => {
   return (
@@ -42,7 +50,7 @@ const BottomTabNavigator = () => {
         name="ExploreScreen"
         component={ExploreScreen}
         options={{
-          tabBarLabel: 'Explore',
+          tabBarLabel: 'Details',
           tabBarIcon: ({color}) => (
             <Icon name="search-outline" color={color} size={30} />
           ),

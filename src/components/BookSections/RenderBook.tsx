@@ -1,6 +1,7 @@
 import {StyleSheet, Text, View, TouchableOpacity, Image} from 'react-native';
 import React from 'react';
 import {Book} from '../../interfaces/bookInterface';
+import {useNavigation} from '@react-navigation/native';
 
 interface Props {
   item: Book;
@@ -8,10 +9,15 @@ interface Props {
 
 const RenderBook = ({item}: Props) => {
   const {title, image, price, author} = item;
+
   const uri = image;
 
+  const navigation = useNavigation();
+
   return (
-    <TouchableOpacity style={styles.container}>
+    <TouchableOpacity
+      style={styles.container}
+      onPress={() => navigation.navigate('ExploreScreen', item)}>
       <Image source={{uri}} style={styles.imageContainer} />
       <Text style={styles.imageTitle}>{title}</Text>
       <Text style={styles.imageAuthor}>{author}</Text>

@@ -10,7 +10,7 @@ const ScreenGreeting = () => {
       <Text style={styles.greetingContainer}>
         <Text style={styles.greetingText}>Hello</Text> {user}
       </Text>
-      <Text style={styles.greetingText2}>What are we you today?</Text>
+      <Text style={styles.greetingText2}>What are you reading today?</Text>
     </View>
   );
 };

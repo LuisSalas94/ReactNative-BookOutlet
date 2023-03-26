@@ -24,11 +24,16 @@ const favoritesSlice = createSlice({
         state.favorites.push(book);
       }
     },
+    //* Remove from favorites
+    removeFromFavorites: (state, action) => {
+      const book = action.payload;
+      state.favorites = state.favorites.filter(fav => fav.isbn !== book.isbn);
+    },
   },
 });
 
 //* Export actions
-export const {addToFavorites} = favoritesSlice.actions;
+export const {addToFavorites, removeFromFavorites} = favoritesSlice.actions;
 
 //* Export reducer
 export default favoritesSlice.reducer;

@@ -28,7 +28,7 @@ const SignUpScreen = () => {
         />
       </View>
       <View style={styles.container2}>
-        <Text style={styles.text}>Sig In</Text>
+        <Text style={styles.text}>Sign In</Text>
         <FormInput
           labelValue={email}
           onChangeText={userEmail => setEmail(userEmail)}

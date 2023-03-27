@@ -17,8 +17,8 @@ const ShoppingCartButtons = ({book}: Props) => {
       <TouchableOpacity
         style={styles.iconContainer}
         onPress={() => dispatch(deleteFromCart(book))}>
-        <Icon name="trash-outline" size={20} color="#333" />
-        <Text>Remove</Text>
+        <Icon name="trash-outline" size={20} color="#fff" />
+        <Text style={styles.iconContainerTextStyle}>Remove</Text>
       </TouchableOpacity>
       <View style={styles.iconContainer2}>
         <TouchableOpacity style={styles.removeStyle}>
@@ -51,9 +51,13 @@ const styles = StyleSheet.create({
     borderColor: '#ccc',
     padding: 5,
     borderRadius: 5,
+    backgroundColor: '#C084fc',
+  },
+  iconContainerTextStyle: {
+    color: '#fff',
   },
   iconContainer2: {
-    width: 90,
+    width: 60,
     height: 30,
     flexDirection: 'row',
     gap: 6,

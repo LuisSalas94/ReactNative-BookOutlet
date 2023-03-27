@@ -27,11 +27,20 @@ const cartSlice = createSlice({
         state.bookCount++;
       }
     },
+    //* Remove from cart
+    deleteFromCart: (state, action) => {
+      const book = action.payload;
+      const bookExists = state.cart.find(cart => cart.isbn === book.isbn);
+      if (bookExists) {
+        state.cart = state.cart.filter(cart => cart.isbn !== book.isbn);
+        state.bookCount--;
+      }
+    },
   },
 });
 
 //* Export actions
-export const {addToCart} = cartSlice.actions;
+export const {addToCart, deleteFromCart} = cartSlice.actions;
 
 //* Export reducer
 export default cartSlice.reducer;

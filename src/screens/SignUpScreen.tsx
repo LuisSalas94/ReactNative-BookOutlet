@@ -50,12 +50,12 @@ const SignUpScreen = () => {
             By registering, you confirm that you accept our{' '}
           </Text>
           <TouchableOpacity>
-            <Text style={[styles.color_textPrivate, {color: '#d1618a'}]}>
+            <Text style={[styles.color_textPrivate, {color: '#c084fc'}]}>
               Terms of service
             </Text>
           </TouchableOpacity>
           <Text style={styles.color_textPrivate}> and </Text>
-          <Text style={[styles.color_textPrivate, {color: '#d1618a'}]}>
+          <Text style={[styles.color_textPrivate, {color: '#c084fc'}]}>
             Privacy Policy
           </Text>
         </View>
@@ -101,25 +101,26 @@ const styles = StyleSheet.create({
   },
 
   navButtonText: {
-    fontSize: 14,
-    fontWeight: '300',
-    color: '#3f494a',
+    fontSize: 15,
+    fontWeight: '400',
+    color: 'grey',
     textAlign: 'center',
   },
   navButtonText2: {
-    color: '#d1618a',
+    color: '#c084fc',
     fontStyle: 'italic',
     textDecorationLine: 'underline',
-    fontWeight: '300',
+    fontWeight: '400',
+    fontSize: 15,
   },
   textPrivate: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    marginVertical: 35,
+    marginVertical: 25,
     justifyContent: 'center',
   },
   color_textPrivate: {
-    fontSize: 13,
+    fontSize: 15,
     fontWeight: '400',
     color: 'grey',
   },

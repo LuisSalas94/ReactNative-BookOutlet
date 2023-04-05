@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
   },
   greetingText: {
-    color: '#d1618a',
+    color: '#c084fc',
   },
   greetingText2: {
     paddingTop: 4,

@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
     fontSize: 12,
   },
   titleStyle: {
-    fontSize: 16,
-    color: '#d1618a',
+    fontSize: 18,
+    color: '#c084dc',
   },
 });

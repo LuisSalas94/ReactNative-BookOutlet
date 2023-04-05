@@ -20,7 +20,7 @@ const RenderItem = ({item}: Props) => {
 
   return (
     <TouchableOpacity onPress={() => filterBook(item)} style={styles.container}>
-      <Icon name={iconName} size={15} color="#333" />
+      <Icon name={iconName} size={15} color="#c084fc" />
       <Text>{item}</Text>
     </TouchableOpacity>
   );

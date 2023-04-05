@@ -5,7 +5,7 @@ const Title = () => {
   return (
     <>
       <Text style={styles.titleContainer}>
-        <Text style={styles.titleInner}>App</Text> Name
+        <Text>Book</Text> <Text style={styles.titleInner}>Outlet</Text>
       </Text>
     </>
   );
@@ -19,6 +19,6 @@ const styles = StyleSheet.create({
     fontSize: 25,
   },
   titleInner: {
-    color: '#d1618a',
+    color: '#c084fc',
   },
 });

@@ -2,7 +2,6 @@ import React from 'react';
 import {StyleSheet, Text, View, TouchableOpacity, Image} from 'react-native';
 import FormButton from '../components/LoginSignup/FormButton';
 import FormInput from '../components/LoginSignup/FormInput';
-import SocialButton from '../components/LoginSignup/SocialButton';
 import {useLogin} from '../hooks/useLogin';
 
 const LoginScreen = () => {
@@ -19,7 +18,7 @@ const LoginScreen = () => {
           labelValue={email}
           onChangeText={userEmail => setEmail(userEmail)}
           placeholderText="Email"
-          iconType="person-outline"
+          iconType="mail-outline"
           keyboardType="email-address"
           autoCapitalize="none"
           autoCorrect={false}
@@ -56,22 +55,6 @@ const LoginScreen = () => {
           </Text>
         </TouchableOpacity>
       </View>
-
-      <SocialButton
-        buttonTitle="Sign In with Facebook"
-        btnType="logo-facebook"
-        color="#3f494a"
-        backgroundColor="#fff"
-        iconColor="#4867aa"
-      />
-
-      <SocialButton
-        buttonTitle="Sign In with Google"
-        btnType="logo-google"
-        color="#3f494a"
-        backgroundColor="#fff"
-        iconColor="#de4d41"
-      />
     </View>
   );
 };
@@ -104,7 +87,7 @@ const styles = StyleSheet.create({
     color: '#3f494a',
   },
   navButton: {
-    marginTop: 15,
+    marginTop: 0,
   },
   forgotButton: {
     marginVertical: 25,
@@ -123,7 +106,7 @@ const styles = StyleSheet.create({
   textPrivate: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    marginVertical: 35,
+    marginVertical: 20,
     justifyContent: 'center',
   },
   color_textPrivate: {

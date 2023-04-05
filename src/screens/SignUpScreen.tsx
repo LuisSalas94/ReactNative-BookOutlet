@@ -6,9 +6,6 @@ import FormInput from '../components/LoginSignup/FormInput';
 import {windowHeight} from '../utils/Dimensions';
 import {useSignup} from '../hooks/useSignup';
 
-//https://www.youtube.com/watch?v=20TSEoJkg5k&ab_channel=BornToCode
-//https://console.firebase.google.com/project/proyectofirebase-9d69f/authentication/users
-
 const SignUpScreen = () => {
   const {email, setEmail, password, setPassword, navigation, signInUser} =
     useSignup();
@@ -45,6 +42,7 @@ const SignUpScreen = () => {
           iconType="lock-closed-outline"
           secureTextEntry={true}
         />
+
         <FormButton buttonTitle="Sign In" onPress={() => signInUser(user)} />
         {/*   {isSignedIn ? (
           <FormButton buttonTitle="Sign Out" onPress={() => signOutUser()} />

@@ -20,7 +20,7 @@ const Synopsis = ({book}: Props) => {
         <TouchableOpacity
           style={styles.synopsisTitleIconContainer}
           onPress={() => dispatch(addToFavorites(book))}>
-          <Icon name="bookmark-outline" size={22} color="#333" />
+          <Icon name="bookmark-outline" size={22} color="#c084fc" />
         </TouchableOpacity>
       </View>
       <Text style={styles.synopsisStyle}>{synopsis}</Text>
@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
     height: 34,
     borderRadius: 17,
     borderWidth: 0.8,
-    borderColor: '#333',
+    borderColor: '#c084fc',
   },
   synopsisStyle: {
     fontSize: 15,

@@ -19,10 +19,10 @@ const styles = StyleSheet.create({
     width: 90,
     borderRadius: 10,
     alignItems: 'center',
-    borderColor: '#e0dfe0',
-    backgroundColor: '#3f494a',
+    borderColor: '#c084fc',
+    backgroundColor: '#fff',
   },
   textStyle: {
-    color: '#e0dfe0',
+    color: '#c084fc',
   },
 });

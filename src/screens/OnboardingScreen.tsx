@@ -20,44 +20,47 @@ const OnboardingScreen = () => {
           image: (
             <Image
               style={styles.imageStyle}
-              source={require('../../assets/onboarding-img1-removebg-preview.png')}
+              source={require('../../assets/onboarding-img1-preview-removebg-preview.png')}
             />
           ),
-          title: 'Onboarding',
-          subtitle: 'Done with React Native Onboarding Swiper',
+          title: 'Book Outlet',
+          subtitle:
+            'At Book Outlet, our core focus is Enchanting the Mind. This is our why, our purpose, our passion behind everything we do. We believe we are not just selling books, rather we are impacting the lives of millions of people both locally and across the globe. ',
         },
         {
-          backgroundColor: '#9aa8a9',
+          backgroundColor: '#FDF4FF',
           image: (
             <Image
               style={styles.imageStyle}
-              source={require('../../assets/onboarding-img2-removebg-preview.png')}
+              source={require('../../assets/onboarding-img2-preview.png-removebg-preview.png')}
             />
           ),
-          title: 'Onboarding 2',
-          subtitle: 'Done with React Native Onboarding Swiper',
+          title: 'No just books',
+          subtitle: 'We are known for our epic of new, used, and rare books.',
         },
         {
           backgroundColor: '#fff',
           image: (
             <Image
               style={styles.imageStyle}
-              source={require('../../assets/onboarding-img3-removebg-preview.png')}
+              source={require('../../assets/onboarding-img3-preview.png.png-removebg-preview.png')}
             />
           ),
-          title: 'Onboarding 3',
-          subtitle: 'Done with React Native Onboarding Swiper',
+          title: 'More to explore',
+          subtitle:
+            'Book Outlet regurlarly offers discounts of up to 90% off. Also, publishes fascinating features about a huge variety of topics.',
         },
         {
-          backgroundColor: '#9aa8a9',
+          backgroundColor: '#FDF4FF',
           image: (
             <Image
               style={styles.imageStyle}
-              source={require('../../assets/onboarding-img4-removebg-preview.png')}
+              source={require('../../assets/onboarding-img4-preview.png.png-removebg-preview.png')}
             />
           ),
-          title: 'Onboarding 4',
-          subtitle: 'Done with React Native Onboarding Swiper',
+          title: 'Independent booksellers',
+          subtitle:
+            'Millions of books and other items are listed for sale by thousands of independent booksellers around the world.',
         },
       ]}
     />

@@ -2,16 +2,13 @@ import React from 'react';
 import {ScrollView, StyleSheet, Text, FlatList, View} from 'react-native';
 import FavoriteBook from '../components/FavoriteSection/FavoriteBook';
 import {useAppSelector} from '../hooks/storeHooks';
+import PageNotFound from '../components/BookDetail/PageNotFound';
 
 const Favorites = () => {
   const favoritesBooks = useAppSelector(state => state.favorites.favorites);
 
   if (!favoritesBooks.length) {
-    return (
-      <ScrollView style={styles.container}>
-        <Text>You don't have any favorite books yet</Text>
-      </ScrollView>
-    );
+    return <PageNotFound />;
   }
 
   return (

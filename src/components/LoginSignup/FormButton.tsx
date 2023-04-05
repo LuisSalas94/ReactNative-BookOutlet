@@ -17,7 +17,9 @@ const styles = StyleSheet.create({
     marginTop: 10,
     width: '100%',
     height: windowHeight / 18,
-    backgroundColor: '#3f494a',
+    backgroundColor: '#fff',
+    borderWidth: 1,
+    borderColor: '#c084fc',
     padding: 10,
     alignItems: 'center',
     justifyContent: 'center',
@@ -25,8 +27,8 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     fontSize: 18,
-    fontWeight: 'bold',
-    color: '#ffffff',
+    fontWeight: '500',
+    color: '#c084fc',
     fontFamily: 'Lato-Regular',
   },
 });

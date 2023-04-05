@@ -37,12 +37,12 @@ const LoginScreen = () => {
             By registering, you confirm that you accept our{' '}
           </Text>
           <TouchableOpacity onPress={() => alert('Terms Clicked!')}>
-            <Text style={[styles.color_textPrivate, {color: '#d1618a'}]}>
+            <Text style={[styles.color_textPrivate, {color: '#c084fc'}]}>
               Terms of service
             </Text>
           </TouchableOpacity>
           <Text style={styles.color_textPrivate}> and </Text>
-          <Text style={[styles.color_textPrivate, {color: '#d1618a'}]}>
+          <Text style={[styles.color_textPrivate, {color: '#c084fc'}]}>
             Privacy Policy
           </Text>
         </View>
@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   logo: {
-    height: 320,
+    height: 420,
     width: 320,
     resizeMode: 'cover',
   },
@@ -93,13 +93,13 @@ const styles = StyleSheet.create({
     marginVertical: 25,
   },
   navButtonText: {
-    fontSize: 14,
-    fontWeight: '300',
-    color: '#3f494a',
+    fontSize: 15,
+    fontWeight: '400',
+    color: 'grey',
     textAlign: 'center',
   },
   navButtonText2: {
-    color: '#d1618a',
+    color: '#c084fc',
     fontStyle: 'italic',
     textDecorationLine: 'underline',
   },
@@ -110,7 +110,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   color_textPrivate: {
-    fontSize: 13,
+    fontSize: 15,
     fontWeight: '400',
     color: 'grey',
   },

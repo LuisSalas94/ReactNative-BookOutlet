@@ -1,14 +1,11 @@
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
 import Icon from 'react-native-vector-icons/Ionicons';
-import {useAppSelector} from '../../hooks/storeHooks';
 import uuid from 'react-native-uuid';
-import {useSignup} from '../../hooks/useSignup';
-const createMobilePhoneNumber = require('random-mobile-numbers');
+import {useMyPage} from '../../hooks/useMyPage';
 
 const MyPage = () => {
-  const {user, email} = useAppSelector(state => state.user);
-  const {signOutUser} = useSignup();
+  const {email, signOutUser, user, createMobilePhoneNumber} = useMyPage();
 
   return (
     <View style={styles.container}>

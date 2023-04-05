@@ -10,11 +10,17 @@ import BackIcon from '../components/BookDetail/BackIcon';
 import BackGroundImage from '../components/BookDetail/BackGroundImage';
 import Review from '../components/BookDetail/Review';
 import Buy from '../components/BookDetail/Buy';
+import PageNotFound from '../components/BookDetail/PageNotFound';
 
 //* Use RootStackParamList to pass params to the screen
 interface Props extends StackScreenProps<RootStackParams, 'ExploreScreen'> {}
 
 const ExploreScreen = ({route}: Props) => {
+  const book = route.params;
+  if (!book) {
+    return <PageNotFound />;
+  }
+
   const {title, image, author, genre, num_pages, review, review_author, price} =
     route.params;
 

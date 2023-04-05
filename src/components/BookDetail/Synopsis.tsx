@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
   synopsisStyle: {
     fontSize: 15,
     letterSpacing: 0.5,
-    lineHeight: 20,
+    lineHeight: 22,
     marginTop: 20,
   },
 });

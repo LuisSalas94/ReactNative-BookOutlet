@@ -44,11 +44,6 @@ const SignUpScreen = () => {
         />
 
         <FormButton buttonTitle="Sign In" onPress={() => signInUser(user)} />
-        {/*   {isSignedIn ? (
-          <FormButton buttonTitle="Sign Out" onPress={() => signOutUser()} />
-        ) : (
-          <FormButton buttonTitle="Sign In" onPress={() => signInUser()} />
-        )} */}
 
         <View style={styles.textPrivate}>
           <Text style={styles.color_textPrivate}>

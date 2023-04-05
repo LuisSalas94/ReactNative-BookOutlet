@@ -20,15 +20,17 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   buyButtonStyle: {
-    backgroundColor: '#ccc',
+    backgroundColor: '#fff',
     width: windowWidth / 1.2,
-    padding: 12,
+    padding: 10,
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: 20,
+    borderRadius: 5,
+    borderWidth: 1,
+    borderColor: '#c084fc',
   },
   buyButtonTextStyle: {
-    color: '#fff',
+    color: '#c084fc',
     fontSize: 18,
   },
 });

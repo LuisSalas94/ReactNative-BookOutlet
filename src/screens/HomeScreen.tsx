@@ -30,8 +30,3 @@ const styles = StyleSheet.create({
     padding: 25,
   },
 });
-
-/*
-#d1618a
-#3f494a
-*/

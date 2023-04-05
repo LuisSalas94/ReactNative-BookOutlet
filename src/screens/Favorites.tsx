@@ -2,7 +2,7 @@ import React from 'react';
 import {ScrollView, StyleSheet, Text, FlatList, View} from 'react-native';
 import FavoriteBook from '../components/FavoriteSection/FavoriteBook';
 import {useAppSelector} from '../hooks/storeHooks';
-import PageNotFound from '../components/BookDetail/PageNotFound';
+import PageNotFound from '../components/FavoriteSection/PageNotFound';
 
 const Favorites = () => {
   const favoritesBooks = useAppSelector(state => state.favorites.favorites);
